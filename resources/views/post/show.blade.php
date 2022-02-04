@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="text-center text-primary">MyWebtuts.com</h3>
+                    <h3 class="text-center text-primary">Single article</h3>
                     <hr />
                     <br/>
                     <h3>{{ $post->title }}</h3>
