@@ -1,8 +1,9 @@
 @foreach($comments as $comment)
     <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
-        @if(Auth::user()->image)
-        <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
-        @endif <strong>{{ $comment->user->name }}</strong>
+            @if(Auth::user()->image)
+            <img class="image rounded-circle" src="{{asset('/storage/images/'.$comment->user->image)}}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+            @endif  
+        <strong>{{ $comment->user->name }}</strong>
         <p>{{ $comment->body }}</p>
         <a href="" id="reply"></a>
         <form method="post" action="{{ route('comments.store') }}">
