@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +26,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('posts', PostController::class);
 Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+
+Route::post('/upload',[App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
+Route::get('/upload_profile',[App\Http\Controllers\HomeController::class, 'upload_profile']);
 
 
